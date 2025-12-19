@@ -204,7 +204,7 @@
     </main>
 
     <dialog class="dialog">
-      <form class="dialog__form" method="dialog">
+      <div class="dialog__form">
         <div class="dialog__content">
           <svg class="dialog__icon" width="39" height="39">
             <use href="#floppy-icon"></use>
@@ -214,19 +214,21 @@
         <button class="dialog__button button" type="button">
           <span class="button__text">OK</span>
         </button>
-      </form>
+      </div>
     </dialog>
 
     <script src="./scripts/like.js"></script>
     <script>
-      document.querySelector('.save-button').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.querySelector('.dialog').showModal();
+      const saveButton = document.querySelector('.save-button');
+      const dialog = document.querySelector('.dialog');
+      const dialogButton = document.querySelector('.dialog__button');
+      
+      saveButton.addEventListener('click', () => {
+        dialog.showModal();
       });
       
-      document.querySelector('.dialog__button').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.querySelector('.dialog').close();
+      dialogButton.addEventListener('click', () => {
+        dialog.close();
       });
     </script>
   </body>
