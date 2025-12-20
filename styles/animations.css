@@ -44,6 +44,9 @@
 .like-icon {
   cursor: pointer;
 }
+.like-icon { 
+  width: 30px; height: 27.5px; 
+}
 
 /* Скрываем искры по умолчанию */
 .like-icon .sparks {
